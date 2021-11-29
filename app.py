@@ -5,7 +5,12 @@ import os
 import numpy as np
 from sklearn.cluster import KMeans
 import matplotlib.image as mpimg
-st.title("Image color clustering..")
+html_temp = """
+    <div style="background-color:tomato;padding:10px">
+    <h2 style="color:white;text-align:center;">"Image color clustering.."</h2>
+    </div>
+    """
+st.markdown(html_temp,unsafe_allow_html=True)
 st.text("by hrishikesh jadhav")
 st.image('logo.jpg', caption='INPUT',width=400)
 st.image('logo_processed.jpeg', caption='OUTPUT',width=400)
@@ -30,17 +35,21 @@ def image_segmentation(image):
     return quantized_image
 
 
-if image_file is not None:
-    img = Image.open(image_file)
-    st.image(img)
-    with open(os.path.join("static",image_file.name),"wb") as f:
-        f.write(image_file.getbuffer())
-    data = image_segmentation("static/"+image_file.name)
-    st.write("Clustering.............")
-    blue, green, red = data.T
-    data = np.array([red, green, blue])
-    data = data.transpose()
-    cv2.imwrite("static/data.jpg",data)
-    img = Image.open("static/data.jpg")
-    st.image(img)
-    st.write("This is your clustered image....")
+def main():
+    if image_file is not None:
+        img = Image.open(image_file)
+        st.image(img)
+        with open(os.path.join("static", image_file.name),"wb") as f:
+            f.write(image_file.getbuffer())
+        data = image_segmentation("static/"+image_file.name)
+        st.write("Clustering.............")
+        blue, green, red = data.T
+        data = np.array([red, green, blue])
+        data = data.transpose()
+        cv2.imwrite("static/data.jpg",data)
+        img = Image.open("static/data.jpg")
+        st.image(img)
+        st.write("This is your clustered image....")
+
+if __name__=='__main__':
+    main()
