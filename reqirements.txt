@@ -1,7 +1,5 @@
-streamlit
-PIL
-cv2
-os
-numpy
-sklearn
-matplotlib
+streamlit==1.2.0
+pillow==8.4.0
+opencv==4.0.1
+numpy==1.21.2
+matplotlib==3.4.3
