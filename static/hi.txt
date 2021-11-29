@@ -1,0 +1,1 @@
+hi...this is static folder..where our imagesa will be saved
