@@ -16,7 +16,7 @@ st.image('logo.jpg', caption='INPUT',width=400)
 st.image('logo_processed.jpeg', caption='OUTPUT',width=400)
 st.header("we will use kmeans clustering algorithm")
 st.write("First choose number of clusters you want from sidebar.")
-st.text("Then upload a image of size less than 200kb for image color clustering..")
+st.text("Then upload a image of size less than 500kb for image color clustering..")
 image_file = st.file_uploader("Upload An Image here",type=['png','jpeg','jpg'])
 
 params = dict()
