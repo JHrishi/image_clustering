@@ -4,3 +4,5 @@ This is link.......
 **https://clusterimage.herokuapp.com/**
 
 
+![quant1](https://user-images.githubusercontent.com/91720399/146321645-0277c786-c768-4908-b3b0-d102f564b832.png)
+![quant2](https://user-images.githubusercontent.com/91720399/146321659-dd01f4f0-6528-498b-8509-81d72799683b.png)
